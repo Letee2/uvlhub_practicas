@@ -1,25 +1,50 @@
----
-name: Bug Report
-about: Crear un reporte de un bug
-title: "[BUG] Título del Bug"
-labels: bug
-assignees: ''
+name: "Bug Report"
+description: "Crea un reporte de un bug"
+labels: ['bug']
+assignees: []
 
----
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Descripción de la incidencia
+        (Describir brevemente el problema)
 
-## Descripción de la incidencia 
-(Describir brevemente el problema) 
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: "Pasos para reproducir"
+      description: "Especificar los pasos necesarios para reproducir el error"
+    validations:
+      required: true
 
-### Pasos para reproducir 
-1. _Paso 1_: (Describir el primer paso para reproducir el error) 
-2. _Paso 2_: (Describir los siguientes pasos) 
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: "Comportamiento esperado"
+      description: "Describir qué comportamiento se esperaba"
+    validations:
+      required: true
 
-### Comportamiento esperado 
-(Explicar lo que se esperaba que ocurriera) 
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: "Comportamiento actual"
+      description: "Describir el comportamiento real observado"
+    validations:
+      required: true
 
-### Comportamiento actual 
-(Explicar lo que está ocurriendo realmente) 
+  - type: input
+    id: version
+    attributes:
+      label: "Versión del sistema"
+      description: "Indicar la versión del sistema afectada"
+    validations:
+      required: false
 
-### Información adicional 
-- **Versión del sistema**: (Indicar la versión del sistema afectada) 
-- **Logs adjuntos**: (Incluir cualquier log relevante o captura de pantalla)
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: "Información adicional"
+      description: "Adjuntar cualquier otra información relevante (logs, capturas de pantalla, etc.)"
+
