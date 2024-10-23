@@ -1,0 +1,25 @@
+---
+name: Bug Report
+about: Crear un reporte de un bug
+title: "[BUG] Título del Bug"
+labels: bug
+assignees: ''
+
+---
+
+## Descripción de la incidencia 
+(Describir brevemente el problema) 
+
+### Pasos para reproducir 
+1. _Paso 1_: (Describir el primer paso para reproducir el error) 
+2. _Paso 2_: (Describir los siguientes pasos) 
+
+### Comportamiento esperado 
+(Explicar lo que se esperaba que ocurriera) 
+
+### Comportamiento actual 
+(Explicar lo que está ocurriendo realmente) 
+
+### Información adicional 
+- **Versión del sistema**: (Indicar la versión del sistema afectada) 
+- **Logs adjuntos**: (Incluir cualquier log relevante o captura de pantalla)
