@@ -3,7 +3,8 @@ name: Semantic Versioning and Release
 on:
   push:
     branches:
-      - main  # O la rama que estés usando
+      - main  # Ejecuta el workflow cuando se haga push en la rama main
+  workflow_dispatch:  # Permite ejecutar manualmente desde GitHub para pruebas
 
 jobs:
   versioning:
@@ -14,17 +15,29 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # 2. Setup Node.js with a specific version (v16 or later)
+      # 2. Set up Node.js (versión 18)
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # Usar al menos la versión 16 de Node.js
+          node-version: '18'  # Usar Node.js 18, ya que es compatible con las nuevas dependencias
 
-      # 3. Install semantic-release and its plugins
-      - name: Install dependencies
+      # 3. Verificar la versión de Node.js para asegurarse de que es la correcta
+      - name: Verificar versión de Node.js
+        run: node --version
+
+      # 4. Limpiar caché de npm
+      - name: Limpiar caché de npm
+        run: npm cache clean --force
+
+      # 5. Reinstalar dependencias desde cero
+      - name: Reinstalar dependencias
+        run: npm ci
+
+      # 6. Instalar semantic-release y sus plugins
+      - name: Install semantic-release
         run: npm install semantic-release @semantic-release/git @semantic-release/changelog
 
-      # 4. Run semantic-release
+      # 7. Ejecutar semantic-release para realizar el versionado
       - name: Run Semantic Release
         run: npx semantic-release
         env:
