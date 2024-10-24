@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Letee2/uvlhub_practicas/compare/v1.0.0...v1.0.1) (2024-10-24)
+
+
+### Bug Fixes
+
+* Update practicandogit_a.txt ([6e16370](https://github.com/Letee2/uvlhub_practicas/commit/6e16370abdf0df3ae13fe98d86f3f2fbb10308d0))
+
 # 1.0.0 (2024-10-24)
 
 
