@@ -1,0 +1,47 @@
+name: Validate Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  check-description:
+    runs-on: ubuntu-latest
+    name: Validate PR Description
+    steps:
+      - name: Check PR description
+        run: |
+          if [ -z "${{ github.event.pull_request.body }}" ]; then
+            echo "Error: PR description is missing. Please provide a detailed description of the changes."
+            exit 1
+          else
+            echo "PR description is present."
+          fi
+
+  run-tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+  require-approval:
+    if: success()
+    name: Wait for Review and Approval
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enforce PR approval
+        run: echo "Waiting for approval from at least one reviewer."
