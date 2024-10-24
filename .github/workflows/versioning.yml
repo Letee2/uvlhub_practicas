@@ -1,0 +1,31 @@
+name: Semantic Versioning and Release
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  versioning:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Clonar el repositorio
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Instalar las herramientas necesarias para Semantic Release
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # Instalar semantic-release y sus plugins
+      - name: Install semantic-release
+        run: npm install semantic-release @semantic-release/git @semantic-release/changelog
+
+      # Ejecutar semantic-release
+      - name: Run Semantic Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Token de GitHub para hacer el commit y la etiqueta
