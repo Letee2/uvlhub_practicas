@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Letee2/uvlhub_practicas/compare/v1.0.1...v1.0.2) (2024-10-25)
+
+
+### Bug Fixes
+
+* Añadidos permisos de escritura al workflow ([496253c](https://github.com/Letee2/uvlhub_practicas/commit/496253c9cf6c3ff849ff623267442c42fe93241e))
+
 ## [1.0.1](https://github.com/Letee2/uvlhub_practicas/compare/v1.0.0...v1.0.1) (2024-10-24)
 
 
