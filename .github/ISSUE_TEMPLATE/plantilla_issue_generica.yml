@@ -1,29 +1,57 @@
-# Título del Issue
-<!-- Título claro y conciso siguiendo el formato: Nombre WI / Fakenodo / Docs: título tarea  -->
-<!-- Ejemplo: WI: Ajuste de carga de datos  -->
+name: "Issue Template"
+description: "Plantilla estandarizada para crear issues con consistencia y claridad"
+title: "Nombre WI / Fakenodo / Docs: título tarea"
+labels: []
+assignees: []
 
-## Descripción
-<!-- Descripción completa del problema, mejora o tarea -->
-<!-- Incluir contexto, objetivo y detalles relevantes para entender el issue -->
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Descripción**  
+        Detalle completo del problema, mejora o tarea. Incluye contexto, objetivo y detalles relevantes que permitan entender de qué se trata el issue.
 
-## Criterios de Aceptación (si aplica)
-<!-- Condiciones que deben cumplirse para considerar el issue resuelto -->
-<!-- Sirve de guía para el revisor y asegura un entendimiento común -->
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: "Descripción"
+      description: "Proporcione una descripción detallada del problema o tarea"
+      placeholder: "Incluye contexto, objetivo y detalles relevantes"
 
-## Pasos para Reproducir (en caso de un bug)
-<!-- Lista detallada de pasos para reproducir el problema -->
-1. Paso uno
-2. Paso dos
-3. Paso tres
-<!-- Agregar capturas o ejemplos de ser necesario -->
+  - type: textarea
+    id: criterios_aceptacion
+    attributes:
+      label: "Criterios de Aceptación (si aplica)"
+      description: "Define las condiciones que deben cumplirse para considerar el issue resuelto"
+      placeholder: "Condiciones para la resolución del issue"
 
-## Etiquetas
-<!-- Especificar las etiquetas adecuadas -->
-<!-- Ejemplos: bug, WI, fakenodo, documentation, workflow -->
+  - type: textarea
+    id: pasos_para_reproducir
+    attributes:
+      label: "Pasos para Reproducir (en caso de un bug)"
+      description: "Lista detallada de pasos para reproducir el problema si es un error"
+      placeholder: "1. Paso uno\n2. Paso dos\n3. Paso tres"
 
-## Asignados
-<!-- Definir al miembro del equipo responsable de la tarea -->
+  - type: checkboxes
+    id: etiquetas
+    attributes:
+      label: "Etiquetas"
+      description: "Clasifica el issue utilizando las etiquetas adecuadas"
+      options:
+        - label: "bug"
+        - label: "WI"
+        - label: "fakenodo"
+        - label: "documentation"
+        - label: "workflow"
 
-## Fecha Límite (si aplica)
-<!-- Fecha específica de finalización, si corresponde -->
+  - type: users
+    id: asignados
+    attributes:
+      label: "Asignados"
+      description: "Define al miembro del equipo responsable de la tarea, si corresponde"
 
+  - type: date
+    id: fecha_limite
+    attributes:
+      label: "Fecha Límite (si aplica)"
+      description: "Fecha específica en la que debe completarse el issue"
