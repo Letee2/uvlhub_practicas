@@ -1,0 +1,29 @@
+# Título del Issue
+<!-- Título claro y conciso siguiendo el formato: Nombre WI / Fakenodo / Docs: título tarea  -->
+<!-- Ejemplo: WI: Ajuste de carga de datos  -->
+
+## Descripción
+<!-- Descripción completa del problema, mejora o tarea -->
+<!-- Incluir contexto, objetivo y detalles relevantes para entender el issue -->
+
+## Criterios de Aceptación (si aplica)
+<!-- Condiciones que deben cumplirse para considerar el issue resuelto -->
+<!-- Sirve de guía para el revisor y asegura un entendimiento común -->
+
+## Pasos para Reproducir (en caso de un bug)
+<!-- Lista detallada de pasos para reproducir el problema -->
+1. Paso uno
+2. Paso dos
+3. Paso tres
+<!-- Agregar capturas o ejemplos de ser necesario -->
+
+## Etiquetas
+<!-- Especificar las etiquetas adecuadas -->
+<!-- Ejemplos: bug, WI, fakenodo, documentation, workflow -->
+
+## Asignados
+<!-- Definir al miembro del equipo responsable de la tarea -->
+
+## Fecha Límite (si aplica)
+<!-- Fecha específica de finalización, si corresponde -->
+
