@@ -1,4 +1,4 @@
-name: "Nuevo Issue"
+name: "Crear una Issue"
 description: "Plantilla para crear un nuevo issue"
 labels: []
 assignees: []
@@ -8,7 +8,7 @@ body:
     attributes:
       value: |
         ## Título del Issue
-        (Usar el formato: Nombre WI / Fakenodo / Docs: título tarea (P), donde P es la prioridad: alta (H), media (M) o baja (L))
+        (Usar el formato: Nombre WI / Fakenodo / Docs: título tarea)
 
   - type: input
     id: issue-title
@@ -43,18 +43,6 @@ body:
       required: false
 
   - type: dropdown
-    id: priority
-    attributes:
-      label: "Prioridad"
-      description: "Seleccionar la prioridad del issue."
-      options:
-        - Alta
-        - Media
-        - Baja
-    validations:
-      required: true
-
-  - type: dropdown
     id: tags
     attributes:
       label: "Etiquetas"
@@ -66,6 +54,7 @@ body:
         - fakenodo
         - documentation
         - workflow
+        - test
     validations:
       required: true
 
@@ -84,4 +73,5 @@ body:
       description: "Asignar al miembro responsable del issue, si corresponde."
     validations:
       required: false
+
 
