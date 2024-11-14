@@ -1,6 +1,5 @@
-name: "Issue Template"
-description: "Plantilla estandarizada para crear issues con consistencia y claridad"
-title: "Nombre WI / Fakenodo / Docs: título tarea"
+name: "Nuevo Issue"
+description: "Plantilla para crear un nuevo issue"
 labels: []
 assignees: []
 
@@ -8,50 +7,81 @@ body:
   - type: markdown
     attributes:
       value: |
-        **Descripción**  
-        Detalle completo del problema, mejora o tarea. Incluye contexto, objetivo y detalles relevantes que permitan entender de qué se trata el issue.
+        ## Título del Issue
+        (Usar el formato: Nombre WI / Fakenodo / Docs: título tarea (P), donde P es la prioridad: alta (H), media (M) o baja (L))
+
+  - type: input
+    id: issue-title
+    attributes:
+      label: "Título del Issue"
+      description: "Descripción clara y concisa del problema o tarea. Usar el formato indicado."
+    validations:
+      required: true
 
   - type: textarea
-    id: descripcion
+    id: description
     attributes:
       label: "Descripción"
-      description: "Proporcione una descripción detallada del problema o tarea"
-      placeholder: "Incluye contexto, objetivo y detalles relevantes"
+      description: "Detalle completo del problema, mejora o tarea. Incluir contexto, objetivo y detalles relevantes."
+    validations:
+      required: true
 
   - type: textarea
-    id: criterios_aceptacion
+    id: acceptance-criteria
     attributes:
       label: "Criterios de Aceptación (si aplica)"
-      description: "Define las condiciones que deben cumplirse para considerar el issue resuelto"
-      placeholder: "Condiciones para la resolución del issue"
+      description: "Definir las condiciones necesarias para considerar el issue resuelto."
+    validations:
+      required: false
 
   - type: textarea
-    id: pasos_para_reproducir
+    id: steps-to-reproduce
     attributes:
-      label: "Pasos para Reproducir (en caso de un bug)"
-      description: "Lista detallada de pasos para reproducir el problema si es un error"
-      placeholder: "1. Paso uno\n2. Paso dos\n3. Paso tres"
+      label: "Pasos para Reproducir (solo para bugs)"
+      description: "Lista detallada de pasos para reproducir el problema, en caso de tratarse de un error."
+    validations:
+      required: false
 
-  - type: checkboxes
-    id: etiquetas
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Prioridad"
+      description: "Seleccionar la prioridad del issue."
+      options:
+        - Alta
+        - Media
+        - Baja
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tags
     attributes:
       label: "Etiquetas"
-      description: "Clasifica el issue utilizando las etiquetas adecuadas"
+      description: "Seleccionar una o varias etiquetas para clasificar el issue."
+      multiple: true
       options:
-        - label: "bug"
-        - label: "WI"
-        - label: "fakenodo"
-        - label: "documentation"
-        - label: "workflow"
+        - bug
+        - WI
+        - fakenodo
+        - documentation
+        - workflow
+    validations:
+      required: true
 
-  - type: users
-    id: asignados
-    attributes:
-      label: "Asignados"
-      description: "Define al miembro del equipo responsable de la tarea, si corresponde"
-
-  - type: date
-    id: fecha_limite
+  - type: input
+    id: deadline
     attributes:
       label: "Fecha Límite (si aplica)"
-      description: "Fecha específica en la que debe completarse el issue"
+      description: "Especificar una fecha límite para completar el issue, si corresponde."
+    validations:
+      required: false
+
+  - type: input
+    id: assignees
+    attributes:
+      label: "Asignados"
+      description: "Asignar al miembro responsable del issue, si corresponde."
+    validations:
+      required: false
+
